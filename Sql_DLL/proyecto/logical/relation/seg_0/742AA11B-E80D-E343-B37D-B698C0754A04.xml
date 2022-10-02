@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PlanillaTrabajador Planilla FK" directorySegmentName="seg_0" id="742AA11B-E80D-E343-B37D-B698C0754A04">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:04 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<sourcePk>E1C7FCD1-74EE-66DF-6C05-3C7D71382B0F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B256859C-012D-C257-628F-189D7178DF5D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E3A233F2-0F70-31FE-FFC9-CF4D18609536</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

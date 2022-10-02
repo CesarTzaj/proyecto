@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AEA9063D-B44C-72F0-8318-24D7DA47C57B" name="PlanillaTrabajador">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>E3A233F2-0F70-31FE-FFC9-CF4D18609536</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IdPlanilla" id="4CF7D964-8F4B-45A3-372C-4A340EBA41C3">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>F8F226E8-3B87-3DDA-7A39-96133DA2A509</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdTrabajador" id="9D84338D-CD8B-F211-8CC0-50022D1D188A">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>FEC4B9F4-1834-35A9-C3F6-0E7A731B8C2D</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sueldo" id="9D957F56-A9CE-AECA-59AA-F2196CF69919">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>F4BB359D-41A2-4F97-9227-6A518C2249FE</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdEstado" id="377248D8-DA9C-FBE9-01D1-7216DED532C6">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>48E76FF9-8288-7897-559B-AC812BE4090D</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IdPosicion" id="E178D9C9-316A-6753-66CA-33B3BF7D6F8D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>62D1464D-58FD-1B08-5759-0A96C5A4DF2E</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Planilla_Id_planilla" id="5C7358DD-2503-013D-F551-B9C652E163C9">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>7A8A1486-C40E-E273-7D6E-0C014235AA13</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="903D258C-C06B-88D0-3159-C2C0E667C512" referredColumn="DDB1CFC9-E71E-E2FF-ED66-3B6754B8A5BC"/>
+</associations>
+</Column>
+<Column name="Trabajador_IdTrabajador" id="645CB9D7-2B84-BCCC-C5CE-8C912D2B8B8B">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>9E6DD2B3-F35A-34B1-13C6-B24739BD007A</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB07C3AA-06A2-ED85-12D6-82E8A7D88487" referredColumn="74DFDCCC-DF6E-D916-9FBD-19972CFCE07D"/>
+</associations>
+</Column>
+<Column name="EstadoPlanilla_IdEStado" id="27164A89-74A5-6C48-7035-E30BD6CF8735">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>687A0754-0D96-9035-F62B-7EA929F32466</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="801DB326-5B23-A553-FA8D-2DE3A3FF96DC" referredColumn="68779C8E-301E-C7D8-D031-C05A192C17EB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="586AA245-9C9B-A24E-8141-34A9B51C5563" name="PlanillaTrabajador_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>9A5D8C06-4EF2-AB6A-99D4-B93B74361579</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4CF7D964-8F4B-45A3-372C-4A340EBA41C3"/>
+<colUsage columnID="E178D9C9-316A-6753-66CA-33B3BF7D6F8D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A3DCC5EE-FC10-C07C-C1F0-A1083CCE4F4A" name="PlanillaTrabajador_Planilla_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>742AA11B-E80D-E343-B37D-B698C0754A04</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C7358DD-2503-013D-F551-B9C652E163C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F49C0700-BAD7-5575-F152-F2B3DB025ABE" name="PlanillaTrabajador_Trabajador_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:53 UTC</createdTime>
+<generatorID>A4FB8BA7-1921-262F-C822-96FEBA877D8B</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="645CB9D7-2B84-BCCC-C5CE-8C912D2B8B8B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="643F9315-C276-02A6-8AE2-FD1C7F954039" name="PlanillaTrabajador_EstadoPlanilla_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:53 UTC</createdTime>
+<generatorID>1277D00B-1AE8-3A5A-2137-6D654157C8FD</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27164A89-74A5-6C48-7035-E30BD6CF8735"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

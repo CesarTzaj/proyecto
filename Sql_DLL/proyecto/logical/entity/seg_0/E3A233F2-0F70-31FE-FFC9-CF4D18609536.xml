@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E3A233F2-0F70-31FE-FFC9-CF4D18609536" name="PlanillaTrabajador">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:03:10 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdPlanilla" id="F8F226E8-3B87-3DDA-7A39-96133DA2A509">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:03:30 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdTrabajador" id="FEC4B9F4-1834-35A9-C3F6-0E7A731B8C2D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:03:57 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Sueldo" id="F4BB359D-41A2-4F97-9227-6A518C2249FE">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:04:23 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdEstado" id="48E76FF9-8288-7897-559B-AC812BE4090D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:05:01 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdPosicion" id="62D1464D-58FD-1B08-5759-0A96C5A4DF2E">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:05:32 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Planilla Id planilla" id="7A8A1486-C40E-E273-7D6E-0C014235AA13">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:04 UTC</createdTime>
+<generatorID>742AA11B-E80D-E343-B37D-B698C0754A04</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<referedAttribute>042DCAAF-98C4-6DE7-2DF1-DA5449A5EFE8</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Trabajador IdTrabajador" id="9E6DD2B3-F35A-34B1-13C6-B24739BD007A">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:28 UTC</createdTime>
+<generatorID>A4FB8BA7-1921-262F-C822-96FEBA877D8B</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<referedAttribute>81360FC8-91E1-FB34-EA15-67F0403B5C0F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EstadoPlanilla IdEStado" id="687A0754-0D96-9035-F62B-7EA929F32466">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:36 UTC</createdTime>
+<generatorID>1277D00B-1AE8-3A5A-2137-6D654157C8FD</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<referedAttribute>7A11007F-E151-9347-4F4A-55305AAB162E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9A5D8C06-4EF2-AB6A-99D4-B93B74361579" name="PlanillaTrabajador PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:03:52 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F8F226E8-3B87-3DDA-7A39-96133DA2A509</attributeRef>
+<attributeRef>62D1464D-58FD-1B08-5759-0A96C5A4DF2E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

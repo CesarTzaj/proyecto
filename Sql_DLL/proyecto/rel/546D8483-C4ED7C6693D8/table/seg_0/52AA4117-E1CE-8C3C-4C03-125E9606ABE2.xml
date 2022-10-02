@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="52AA4117-E1CE-8C3C-4C03-125E9606ABE2" name="Planilla">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>B256859C-012D-C257-628F-189D7178DF5D</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_planilla" id="DDB1CFC9-E71E-E2FF-ED66-3B6754B8A5BC">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>042DCAAF-98C4-6DE7-2DF1-DA5449A5EFE8</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="anio" id="4DB88AF8-89CF-F568-4E3D-E4F0491686B9">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>8BA678DB-128B-E1F0-7F04-8C8F292872F3</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mes" id="98BD3C3B-D599-38D9-BDD5-B9568B255DBA">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>5CF19728-7F04-703B-4567-409EE4CFA634</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Empresa_Id_empresa" id="DA0F8A7E-3627-7A4F-BA1D-38BF11A632C5">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>B4FCFDC6-BCCD-80CE-7629-9BFCBFE684F7</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2262C874-A0C8-13B1-AA8E-5F568EF93743" referredColumn="F91F3280-1D2D-35DF-A1CB-89CB1467AB3B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A682C312-7277-DFF9-DC32-5C1AFBE4A221" name="Planilla_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>E1C7FCD1-74EE-66DF-6C05-3C7D71382B0F</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DDB1CFC9-E71E-E2FF-ED66-3B6754B8A5BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5FF7EA63-9102-D639-2B48-1B240197B10C" name="Planilla_Empresa_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>A9CEDD2A-BB47-E5E1-6EB9-303C3C1AEEAB</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DA0F8A7E-3627-7A4F-BA1D-38BF11A632C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

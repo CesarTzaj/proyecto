@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F81331BD-4647-550D-0476-BCF763D8BC55" name="Trabajador">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:07:17 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdTrabajador" id="81360FC8-91E1-FB34-EA15-67F0403B5C0F">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:07:25 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cui" id="8E1FCB40-11A4-F012-3282-AA6B954F165E">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:07:52 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Estado" id="17DA9623-7922-7B01-69AB-4B51B2920504">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:08:22 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6D2CD4C8-50E5-F0B3-B7AB-5295C92FB5DD" name="Trabajador PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:07:48 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>81360FC8-91E1-FB34-EA15-67F0403B5C0F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

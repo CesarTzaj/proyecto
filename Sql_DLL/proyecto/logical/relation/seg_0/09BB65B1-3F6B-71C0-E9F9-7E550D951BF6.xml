@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Trabajador Persona FK" directorySegmentName="seg_0" id="09BB65B1-3F6B-71C0-E9F9-7E550D951BF6">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:14 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<engineerTo>
+<item key="546D8483-2AC2-F509-EF30-C4ED7C6693D8" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>524AC272-FD78-0E1F-6DD6-E19233D7E9FC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F81331BD-4647-550D-0476-BCF763D8BC55</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

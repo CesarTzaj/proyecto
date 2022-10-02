@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B3214531-092E-EEF4-EB7D-3B8B9412B9AE" name="Trabajador">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>F81331BD-4647-550D-0476-BCF763D8BC55</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IdTrabajador" id="74DFDCCC-DF6E-D916-9FBD-19972CFCE07D">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>81360FC8-91E1-FB34-EA15-67F0403B5C0F</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cui" id="60FFBB0B-54EB-3670-81B5-D0A1180341BC">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>8E1FCB40-11A4-F012-3282-AA6B954F165E</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<ownDataTypeParameters>,12,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="F1374B41-2A6B-AE2E-88E0-90BFCDE511B0">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>17DA9623-7922-7B01-69AB-4B51B2920504</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Persona_Persona_ID" id="C0F79726-E9D3-D00D-C591-ED69EA002539">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:53 UTC</createdTime>
+<ownerDesignName>proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B8C96915-E62F-766E-CCBF-2E461A45B55D" referredColumn="F67F2650-EC6C-C1B8-5BB4-29102B8610D5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EF519F1C-D915-A51C-452E-9317C1385494" name="Trabajador_PK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>6D2CD4C8-50E5-F0B3-B7AB-5295C92FB5DD</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74DFDCCC-DF6E-D916-9FBD-19972CFCE07D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FDF36201-7CE6-768B-945A-02BD633F9EBF" name="Trabajador_Persona_FK">
+<createdBy>Gabriel</createdBy>
+<createdTime>2022-09-06 19:10:52 UTC</createdTime>
+<generatorID>09BB65B1-3F6B-71C0-E9F9-7E550D951BF6</generatorID>
+<ownerDesignName>proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0F79726-E9D3-D00D-C591-ED69EA002539"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
