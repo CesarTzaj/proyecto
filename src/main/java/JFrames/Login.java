@@ -99,8 +99,8 @@ public final class Login extends javax.swing.JFrame {
         });
         getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 243, 140, 50));
 
-        LblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brackgournd/login.png"))); // NOI18N
-        getContentPane().add(LblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 649, 440));
+        LblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brackgournd/fondoEmpresa.jpg"))); // NOI18N
+        getContentPane().add(LblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 590, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

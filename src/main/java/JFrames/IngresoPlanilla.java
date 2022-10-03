@@ -38,7 +38,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
     boolean estadoAlta = false;
     boolean errorInteger = false;
     boolean repetidos = false;
-    boolean estado = false;
+    boolean estadoNormal = false;
     boolean suspendidos = false;
 
     public IngresoPlanilla() {
@@ -429,6 +429,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ingrese la empresa ID", "Importante", JOptionPane.WARNING_MESSAGE);
         } else {
             btnbuscar();
+            buscarPlanillaid();
 
         }
 
@@ -470,12 +471,12 @@ public class IngresoPlanilla extends javax.swing.JFrame {
     private void btnCargarArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarArchivoActionPerformed
         CargarArchivo();
         datosrepetidos();
-      //  estadoNormalDBA();
-      //  estadoAlta();
+
+        //  estadoAlta();
         Suspendidos();
         sueldo();
-            InsertarPersonaNueva();
-        if ((repetidos == false) && (errorInteger == false) && (estado == true) && (suspendidos == true)) {
+
+        if ((repetidos == false) && (errorInteger == false) && (suspendidos == true)) {
             btnguardar.setEnabled(true);
         }
     }//GEN-LAST:event_btnCargarArchivoActionPerformed
@@ -486,29 +487,26 @@ public class IngresoPlanilla extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
-      /*  if (txtAnio.getText().equals("") || txtMes.getText().equals("")) {
+        if (txtAnio.getText().equals("") || txtMes.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos", "Aviso", javax.swing.JOptionPane.INFORMATION_MESSAGE);
         } else {
             int confirmacion = JOptionPane.showConfirmDialog(null, "Desea guardar los datos en la base de datos", "Confirmacion", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (confirmacion == 0) {
-                if (txtPlanillaID.getText().equals("")) {
-                    Planilla();
-                } else {
-                    if (revisionPlanillaRepetida() == false) {
-                         InsertarPersonaNueva();
-                        InsertarTrabajadorNueva();
-                        PlanillaTrabajador();
-                    }
 
-                }
+                    Planilla(); 
+                    InsertarPersonaNueva();
+                    InsertarTrabajadorNueva();
+                    estadoNormalDBA();
+                    if (estadoNormal == true) {
+                        if (revisionPlanillaRepetida() == false) {
+                            PlanillaTrabajador();
+                        }
+                    }
+                
+
+                
             }
         }
-*/
-       InsertarPersonaNueva();
-    //  estadoAltaDBA();
-      //InsertarPersonaNueva();
-                       //InsertarTrabajadorNueva();
-
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void txtPlanillaIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPlanillaIDKeyTyped
@@ -520,7 +518,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             if (this.txtPlanillaID.getText().equals("")) {
                 JOptionPane.showMessageDialog(this, "Ingrese la empresa ID", "Importante", JOptionPane.WARNING_MESSAGE);
             } else {
-                if (txtPlanillaID.getText().length() > 0) {
+
 
                     if (busarEmpresa() == true && buscarPlanillaid() == true) {
                         btnCargarArchivo.setEnabled(true);
@@ -540,7 +538,6 @@ public class IngresoPlanilla extends javax.swing.JFrame {
                         }
                     }
 
-                }
 
             }
         }
@@ -661,13 +658,14 @@ public class IngresoPlanilla extends javax.swing.JFrame {
 
     private boolean buscarPlanillaid() {
         conectar();
-        String sql = "SELECT\n"
+        if (txtPlanillaID.getText().length()>0) {
+             String sqll = "SELECT\n"
                 + " ANIO, MES "
                 + "FROM planilla "
                 + "where ID_PLANILLA=?"
                 + "AND empresa_id_empresa=?";
         try {
-            ps = connection.prepareStatement(sql);
+            ps = connection.prepareStatement(sqll);
             try {
                 ps.setString(1, txtPlanillaID.getText());
                 ps.setString(2, txtIdEmpresa.getText());
@@ -686,7 +684,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             Logger.getLogger(IngresoPlanilla.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
         }
-
+        }
         desconectar();
         return false;
     }
@@ -750,6 +748,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
         }
         return obtenerEstados;
     }
+
     // Obtener los ID Trabajador
     ArrayList<Integer> TrabajadorID() {
         ArrayList<Integer> trabajadorId = new ArrayList<>();
@@ -761,12 +760,12 @@ public class IngresoPlanilla extends javax.swing.JFrame {
     // Busca datos repetido en el txt
 
     private void datosrepetidos() {
-        ArrayList<Integer> DatosRepetidos = new ArrayList<>();        
-        for (int i = 0; i < TrabajadorID().size(); i++) {            
-            for (int j = i+1; j < TrabajadorID().size(); j++) {               
+        ArrayList<Integer> DatosRepetidos = new ArrayList<>();
+        for (int i = 0; i < TrabajadorID().size(); i++) {
+            for (int j = i + 1; j < TrabajadorID().size(); j++) {
                 if (TrabajadorID().get(i).equals(TrabajadorID().get(j))) {
                     DatosRepetidos.add(TrabajadorID().get(i));
-                    repetidos=true;
+                    repetidos = true;
                 }
             }
         }
@@ -828,7 +827,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             String sql = "SELECT pt.trabajador_idtrabajador \n"
                     + "FROM ESTADOPLANILLA EST,PLANILLATRABAJADOR PT, PLANILLA PL \n"
                     + "WHERE pt.trabajador_idtrabajador = ?\n"
-                    + //"AND pl.empresa_id_empresa = ?\n" +
+                    + "AND pl.empresa_id_empresa = ?\n" +
                     "AND est.descripcion = 'A'\n"
                     + "AND pt.estadoplanilla_idestado = est.idestado\n"
                     + "ANd pl.id_planilla = PT.planilla_id_planilla";
@@ -837,7 +836,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
                 try {
                     ps = connection.prepareStatement(sql);
                     ps.setInt(1, estadoNormal().get(i));
-                    //  ps.setString(2, txtId.getText());
+                    ps.setString(2, txtIdEmpresa.getText());
                     rs = ps.executeQuery();
 
                     if (rs.next()) {
@@ -845,7 +844,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
                     }
                     {
                         estadoNomalDba.add(estadoNormal().get(i));
-                        estado = true;
+                        estadoNormal = true;
                     }
                 } catch (SQLException ex) {
                     Logger.getLogger(IngresoPlanilla.class.getName()).log(Level.SEVERE, null, ex);
@@ -855,13 +854,13 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             //cerrando Conexion
             desconectar();
             if (estadoNomalDba.size() > 0) {
-                estado = false;
+                estadoNormal = false;
                 JOptionPane.showMessageDialog(this, "Trabajadores No tiene estado Alta en esta empresa \n" + estadoNomalDba, "Error Estado", JOptionPane.WARNING_MESSAGE);
             } else {
-                estado = true;
+                estadoNormal = true;
             }
         } else {
-            estado = true;
+            estadoNormal = true;
         }
 
     }
@@ -907,7 +906,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             String sql = "SELECT pt.trabajador_idtrabajador \n"
                     + "FROM ESTADOPLANILLA EST,PLANILLATRABAJADOR PT, PLANILLA PL \n"
                     + "WHERE pt.trabajador_idtrabajador = ?\n"
-                    + //   "AND pl.empresa_id_empresa = ?\n" +
+                    + "AND pl.planilla_id_planilla = ?\n" +
                     "AND est.descripcion = 'A'\n"
                     + "AND pt.estadoplanilla_idestado = est.idestado\n"
                     + "ANd pl.id_planilla = PT.planilla_id_planilla";
@@ -915,11 +914,11 @@ public class IngresoPlanilla extends javax.swing.JFrame {
                 try {
                     ps = connection.prepareStatement(sql);
                     ps.setInt(1, estadoAlta().get(i));
-                    //ps.setString(2, txtIdEmpresa.getText());
+                    ps.setString(2, txtPlanillaID.getText());
                     rs = ps.executeQuery();
                     if (rs.next()) {
                         estadoAlta().remove(i);
-                        //nombre.remove(i);
+
                     } else {
 
                         estadoAltaTable.add(estadoAlta().get(i));
@@ -972,15 +971,13 @@ public class IngresoPlanilla extends javax.swing.JFrame {
         ArrayList<Long> cui = new ArrayList<>();
         ArrayList<String> nombre = new ArrayList<>();
         for (int i = 0; i < Modelo.getRowCount(); i++) {
-            cui.add( Long.parseLong(Modelo.getValueAt(i, 1).toString()));
+            cui.add(Long.parseLong(Modelo.getValueAt(i, 1).toString()));
             nombre.add(Modelo.getValueAt(i, 2).toString());
         }
-        
 
-        String sqlpersona = " MERGE INTO persona USING  (SELECT 1 FROM dual)\n" +
-"ON  (persona.cui= ?)\n" +
-"WHEN NOT matched THEN INSERT (cui, nombre) VALUES (?,?); ";
-        JOptionPane.showMessageDialog(null, cui);
+        String sqlpersona = " MERGE INTO persona USING  (SELECT 1 FROM dual)\n"
+                + "ON  (persona.cui= ?)\n"
+                + "WHEN NOT matched THEN INSERT (cui, nombre) VALUES (?,?) ";
         for (int i = 0; i < cui.size(); i++) {
             try {
                 ps = connection.prepareStatement(sqlpersona);
@@ -988,7 +985,6 @@ public class IngresoPlanilla extends javax.swing.JFrame {
                 ps.setLong(2, cui.get(i));
                 ps.setString(3, nombre.get(i));
                 ps.execute();
-                return true;
             } catch (SQLException ex) {
                 Logger.getLogger(IngresoPlanilla.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex, "Error al obtener los datos", JOptionPane.ERROR_MESSAGE);
@@ -1010,27 +1006,27 @@ public class IngresoPlanilla extends javax.swing.JFrame {
         String sqlpersona = " MERGE INTO Trabajador USING    (SELECT 1 FROM dual) ON (IdTrabajador= ?)\n"
                 + "WHEN NOT matched THEN\n"
                 + "INSERT (idtrabajador, Persona_cui) VALUES (?,?)";
-   //     for (int i = 0; i < cui.size(); i++) {
+        for (int i = 0; i < cui.size(); i++) {
             try {
                 ps = connection.prepareStatement(sqlpersona);
-            //    ps.setInt(1, TrabajadorID().get(i));
-              //  ps.setInt(2, TrabajadorID().get(i));
-            //    ps.setLong(3, cui.get(i));
+                ps.setInt(1, TrabajadorID().get(i));
+                ps.setInt(2, TrabajadorID().get(i));
+                ps.setLong(3, cui.get(i));
                 ps.execute();
-                return true;
             } catch (SQLException ex) {
                 Logger.getLogger(IngresoPlanilla.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, ex, "Error al obtener los datos", JOptionPane.ERROR_MESSAGE);
             }
 
-        //}
+        }
         desconectar();
         return false;
     }
 
     //Crear planilla 
-    private String Planilla() {
-        conectar();
+    private void Planilla() {
+        if (txtPlanillaID.getText().equals("")) {
+            conectar();
 
         String sql = "INSERT INTO PLANILLA (ID_PLANILLA, ANIO, MES, EMPRESA_ID_EMPRESA) \n"
                 + "VALUES ( ?, ?, ?, ?)";
@@ -1061,7 +1057,8 @@ public class IngresoPlanilla extends javax.swing.JFrame {
         }
 
         desconectar();
-        return "";
+        
+        }
     }
 
     private int idPlanilla() {
@@ -1118,8 +1115,8 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             }
             desconectar();
             if (confirmacion == true) {
-                // ImageIcon icono = new ImageIcon("./brackgournd/confirmacion.png");
-                //JOptionPane.showConfirmDialog(null, "Se an grabado los datos", "Cofirmacion ", JOptionPane.WARNING_MESSAGE);
+                
+               JOptionPane.showMessageDialog(null, "Se an grabado los datos", "Cofirmacion ",JOptionPane.INFORMATION_MESSAGE);
             }
         }
 
@@ -1173,7 +1170,7 @@ public class IngresoPlanilla extends javax.swing.JFrame {
             btnguardar.setEnabled(false);
             repetidos = false;
             errorInteger = false;
-            estado = false;
+            estadoNormal = false;
             suspendidos = false;
             txtPlanillaID.setEnabled(true);
             txtPlanillaID.setEnabled(true);
@@ -1247,7 +1244,5 @@ public class IngresoPlanilla extends javax.swing.JFrame {
 
         }
     }
-
-
 
 }
