@@ -693,12 +693,12 @@ public class IngresoPlanilla extends javax.swing.JFrame {
     public ArrayList<Float> CargarArchivo() {
         ArrayList<String> error = new ArrayList<>();
         ArrayList<Float> EstadoS = new ArrayList<>();
-        //JFileChooser fc  = new JFileChooser();
-        //fc.showOpenDialog(null);
-        //File archivo = fc.getSelectedFile();
-        String url = "D:\\Gabriel\\Documents\\prueva.txt";
+        JFileChooser fc  = new JFileChooser();
+        fc.showOpenDialog(null);
+        File archivo = fc.getSelectedFile();
+        
         try {
-            BufferedReader br = new BufferedReader(new FileReader(url));
+            BufferedReader br = new BufferedReader(new FileReader(archivo));
             String line = "";
             Object[] values = new Object[6];
             DecimalFormat frmt = new DecimalFormat();
