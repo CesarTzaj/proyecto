@@ -1,4 +1,3 @@
-
 package JFrames;
 
 import connection.DbaConnection;
@@ -12,20 +11,23 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import usuarios.usuario;
 
 public final class Login extends javax.swing.JFrame {
+
+   
 
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
 
     }
-        @Override
+
+    @Override
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("./brackgournd/icon.png"));
         return retValue;
-    } 
-    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,6 +56,7 @@ public final class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LblTittle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        LblTittle.setForeground(new java.awt.Color(255, 255, 255));
         LblTittle.setText("Bienvenido");
         getContentPane().add(LblTittle, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 55, 137, 31));
 
@@ -110,15 +113,15 @@ public final class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void jPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyTyped
-      char enter = evt.getKeyChar();
-       if(enter==KeyEvent.VK_ENTER){ 
-        loginuser();
-       }
-       //login=loginuser();
+        char enter = evt.getKeyChar();
+        if (enter == KeyEvent.VK_ENTER) {
+            loginuser();
+        }
+        //login=loginuser();
     }//GEN-LAST:event_jPasswordKeyTyped
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-       dispose();
+        dispose();
     }//GEN-LAST:event_SalirActionPerformed
 
     /**
@@ -168,9 +171,10 @@ public final class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPassword;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
-private void loginuser() {
-                Connection connection = null;
+public String loginuser() {
+        Connection connection = null;
         DbaConnection dbaConnection = new DbaConnection();
+        String nombre = null;
         try {
             connection = dbaConnection.getConnection();
         } catch (ClassNotFoundException ex) {
@@ -180,24 +184,39 @@ private void loginuser() {
         String password = new String(jPassword.getPassword());
         PreparedStatement ps = null;
         ResultSet rs = null;
-        if(username.equals("") || password.equals("")  ){
-        JOptionPane.showMessageDialog(this, "Uno o mas campos esta vacio. Ingrese un valor");
-        }else{
+        if (username.equals("") || password.equals("")) {
+            JOptionPane.showMessageDialog(this, "Uno o mas campos esta vacio. Ingrese un valor  dsg");
+        } else {
             try {
-                ps = connection.prepareStatement("SELECT password , users  FROM users where users=? and password  = ?");
+                ps = connection.prepareStatement("SELECT password , users, tipo,nombre FROM users where users=? and password  = ?");
                 ps.setString(1, username);
                 ps.setString(2, password);
-                rs=ps.executeQuery();
-                if(rs.next()){
-                    MainPlanilla mainPlanilla = new MainPlanilla();
-                    mainPlanilla.setVisible(true);
-                    dispose();   
-                }else{
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    int tipo = rs.getInt("tipo");
+                    
+                    if (tipo == 1) {
+                            RegistroDeUsuario registroDeUsuario ;
+                        new RegistroDeUsuario().setVisible(true);
+                        dispose();
+
+                    }
+                    if (tipo == 2) {
+                        MainPlanilla mainPlanilla;
+                        new MainPlanilla().setVisible(true);
+                        dispose();
+                        //return nombre;
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
                 }
             } catch (Exception e) {
-                
+
             }
         }
-    } 
+
+        return nombre;
+    }
+
 }
