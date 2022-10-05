@@ -1,11 +1,23 @@
 
 package JFrames;
 
+import connection.DbaConnection;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class NuevaEmpresa extends javax.swing.JFrame {
+    PreparedStatement ps;
+    ResultSet rs;
+    Connection connection;
+    DbaConnection dbaConnection = new DbaConnection();
 
     public NuevaEmpresa() {
         initComponents();
@@ -59,6 +71,11 @@ public class NuevaEmpresa extends javax.swing.JFrame {
         getContentPane().add(lblEmpresaID, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 111, 153, 40));
 
         txtID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIDKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(271, 112, 200, 40));
 
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -94,14 +111,14 @@ public class NuevaEmpresa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+            registroempresa();
             limpiar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
         char tecla = evt.getKeyChar();
         if(tecla==KeyEvent.VK_ENTER){
-
+            registroempresa();
         limpiar();
         }
     }//GEN-LAST:event_txtNombreKeyTyped
@@ -109,6 +126,13 @@ public class NuevaEmpresa extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIDKeyTyped
+         char tecla = evt.getKeyChar();
+        if(tecla <'0' || tecla>'9'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIDKeyTyped
 
     /**
      * @param args the command line arguments
@@ -164,6 +188,45 @@ public class NuevaEmpresa extends javax.swing.JFrame {
         txtID.setText("");
         txtNombre.setText("");
     }
+
+
+
+    private void registroempresa() {
+        conectar();
+        String sql = "INSERT INTO \"PROYECTO\".\"EMPRESA\" (ID_EMPRESA, EMPRESA) VALUES (?, ?)";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, Integer.parseInt(txtID.getText()));
+            ps.setString(2, txtNombre.getText());
+            ps.execute();
+            JOptionPane.showMessageDialog(null, "Empresa Registrada ");
+        } catch (SQLException ex) {
+            Logger.getLogger(NuevaEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex,"Error al ingresar la neva empresa", JOptionPane.WARNING_MESSAGE);
+        }catch(NumberFormatException e){
+        JOptionPane.showMessageDialog(null, e,"Error de numberos",JOptionPane.ERROR_MESSAGE);
+        }
+        desconectar();
+       
+    }
+    private void conectar() {
+        try {
+            connection = dbaConnection.getConnection();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NuevaEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private void desconectar(){
+        try {
+            connection.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(NuevaEmpresa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+
+
 
 
 }

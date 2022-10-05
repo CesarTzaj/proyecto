@@ -9,6 +9,7 @@ JFrames\Login$1.class
 JFrames\Suspendidos.class
 connection\DbaConnection.class
 JFrames\IngresoPlanilla$8.class
+JFrames\RegistroDeUsuario$2.class
 JFrames\Login$2.class
 JFrames\Suspendidos$1.class
 JFrames\MainPlanilla$5.class
@@ -23,16 +24,17 @@ JFrames\Login.class
 JFrames\MainPlanilla$7.class
 JFrames\IngresoPlanilla$3.class
 JFrames\IngresoPlanilla.class
+JFrames\RegistroDeUsuario$4.class
 JFrames\IngresoPlanilla$7.class
 JFrames\MayorDe3000.class
 JFrames\Login$3.class
 JFrames\MainPlanilla$4.class
 JFrames\MainPlanilla$3.class
 JFrames\RegistroDeUsuario$1.class
-usuarios\usuario.class
 JFrames\IngresoPlanilla$1.class
 JFrames\NuevaEmpresa$3.class
 JFrames\IngresoPlanilla$9.class
+JFrames\RegistroDeUsuario$3.class
 JFrames\RegistroDeUsuario.class
 JFrames\MainPlanilla$6.class
 JFrames\IngresoPlanilla$4.class

@@ -2,6 +2,8 @@
 package JFrames;
 
 import connection.DbaConnection;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +11,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import usuarios.usuario;
 
 
 public class RegistroDeUsuario extends javax.swing.JFrame {
@@ -24,6 +25,11 @@ public class RegistroDeUsuario extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
+    }
+        @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("./brackgournd/icon.png"));
+        return retValue;
     }
 
     /**
@@ -54,6 +60,7 @@ public class RegistroDeUsuario extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setResizable(false);
         getContentPane().setLayout(new java.awt.CardLayout());
 

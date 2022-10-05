@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import usuarios.usuario;
+
 
 public final class Login extends javax.swing.JFrame {
 
